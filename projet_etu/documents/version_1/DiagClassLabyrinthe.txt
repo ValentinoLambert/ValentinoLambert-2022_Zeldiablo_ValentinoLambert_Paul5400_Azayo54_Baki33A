@@ -1,0 +1,38 @@
+@startuml
+
+skin rose
+
+title Labyrinthe Perso
+
+
+
+class Labyrinthe{
+- String HAUT
+- String BAS
+- String GAUCHE
+- String HAUT
++ boolean[][] murs
+int[] getSuivant(int x,int y,String action)
++ Labyrinthe(String nom)
++ deplacerPerso(String action)
++ boolean etreFini()
++ int getLengthY()
++ int getLength()
++ boolean getMur(int x, int y)
+  }
+
+
+class Perso{
+int x
+int y
++ Perso(int dx, int dy)
++ boolean etrePresent(int dx, int dy)
++ int getX()
++ int getY()
+}
+
+
+
+
+
+Labyrinthe -> "1" Perso : +pj

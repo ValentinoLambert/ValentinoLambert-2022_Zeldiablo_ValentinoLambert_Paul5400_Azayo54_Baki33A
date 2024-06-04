@@ -1,0 +1,15 @@
+@startuml
+
+
+
+
+participant Main
+title DeplacerPerso Gauche
+Main -> Labyrinthe : deplacerPerso("Gauche")
+activate Labyrinthe
+Labyrinthe -> Labyrinthe : getSuivant(int x,int y,"Gauche")
+Labyrinthe --> Labyrinthe :int[]
+Labyrinthe --> Main 
+deactivate Labyrinthe
+
+@enduml
