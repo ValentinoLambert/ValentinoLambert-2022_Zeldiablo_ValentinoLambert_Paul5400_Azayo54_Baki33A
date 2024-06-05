@@ -36,6 +36,9 @@ public class Labyrinthe {
      */
     public boolean[][] murs;
 
+    private char[][] grille;
+
+
     /**
      * retourne la case suivante selon une actions
      *
@@ -131,6 +134,9 @@ public class Labyrinthe {
         bfRead.close();
     }
 
+    public Labyrinthe(char[][] grille) {
+        this.grille = grille;
+    }
 
     /**
      * deplace le personnage en fonction de l'action.
@@ -195,4 +201,50 @@ public class Labyrinthe {
         // utilise le tableau de boolean
         return this.murs[x][y];
     }
-}
+
+
+
+
+
+
+
+
+        public boolean estMur(int x, int y) {
+            return grille[x][y] == MUR;
+        }
+
+        public void deplacerPerso(String direction, Perso perso) {
+            int x = perso.getX();
+            int y = perso.getY();
+            int newX = x;
+            int newY = y;
+
+            switch (direction) {
+                case "Haut":
+                    newX = x - 1;
+                    break;
+                case "Bas":
+                    newX = x + 1;
+                    break;
+                case "Gauche":
+                    newY = y - 1;
+                    break;
+                case "Droite":
+                    newY = y + 1;
+                    break;
+            }
+
+            if (!estMur(newX, newY)) {
+                perso.setX(newX);
+                perso.setY(newY);
+            } else {
+                System.out.println("Collision avec un mur!");
+            }
+        }
+
+        public void setPersonnage(Perso perso) {
+            this.pj = perso;
+        }
+
+    }
+
