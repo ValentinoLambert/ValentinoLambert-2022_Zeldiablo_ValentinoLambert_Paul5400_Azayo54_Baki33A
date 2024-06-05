@@ -52,7 +52,7 @@ public class Personnage {
     /**
      * @return position x du personnage
      */
-    public int getX() {
+    public static int getX() {
         // getter
         return this.x;
     }
@@ -60,7 +60,7 @@ public class Personnage {
     /**
      * @return position y du personnage
      */
-    public int getY() {
+    public static int getY() {
         //getter
         return this.y;
     }
