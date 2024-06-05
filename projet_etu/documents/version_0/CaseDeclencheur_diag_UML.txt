@@ -1,0 +1,56 @@
+@startuml
+
+abstract class CaseDeclencheur{
+- int x
+- int y
++ CaseDeclencheur(int x,int y)
+ void event(Personnage p)
++ getX():int
++ getY():int
+}
+
+class CaseOuverture{
+  int x 
+  int y 
+  
+  CaseOuverture(int x,int y,Porte p)
+  void event(Personnage p)
+  
+}
+
+
+class Porte{
+  int x
+  int y
+  etrePresent(int x, int y):boolean
++ Porte(int x, int y)
++ etreFerme():boolean
++ setFerme(boolean ferme)
+}
+
+class CaseFermeture{
+  int x 
+  int y 
+  
+  CaseFermeture(int x,int y,Porte p)
+  void event(Personnage p)
+  
+}
+
+class CasePiege{
+  int x 
+  int y 
+  boolean ammorce
++ CasePiege(int dx,int dy)
++ void event(Personnage p)
+}
+
+CaseOuverture -d-> "1" Porte : p
+CaseFermeture -d-> "1" Porte : p
+
+CaseOuverture -|>CaseDeclencheur
+CaseFermeture -|>CaseDeclencheur
+CasePiege -|>CaseDeclencheur
+
+
+@enduml
