@@ -214,8 +214,8 @@ public class Labyrinthe {
         }
 
         public void deplacerPerso(String direction, Perso perso) {
-            int x = perso.getX();
-            int y = perso.getY();
+            int x = Personnage.getX();
+            int y = Personnage.getY();
             int newX = x;
             int newY = y;
 
