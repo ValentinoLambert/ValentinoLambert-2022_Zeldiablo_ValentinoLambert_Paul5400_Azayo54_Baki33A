@@ -1,3 +1,5 @@
+package Test;
+
 import gameLaby.laby.CaseFermeture;
 import gameLaby.laby.CaseOuverture;
 import gameLaby.laby.CasePiege;
