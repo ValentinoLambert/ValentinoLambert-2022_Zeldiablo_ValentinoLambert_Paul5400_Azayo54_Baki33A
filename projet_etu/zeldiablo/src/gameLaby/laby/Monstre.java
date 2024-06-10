@@ -1,4 +1,5 @@
 package gameLaby.laby;
+
 public class Monstre extends Personnage implements Intelligence{
 
     /**
@@ -25,4 +26,3 @@ public class Monstre extends Personnage implements Intelligence{
         this.intelligence=action;
     }
 }
-
