@@ -24,9 +24,9 @@ public class CasePiege extends CaseDeclencheur {
         }
     }
 
-    public boolean getPasserDessus() {
+     public boolean getPasserDessus() {
         return passerDessus;
-    }
+     }
 
 
 }

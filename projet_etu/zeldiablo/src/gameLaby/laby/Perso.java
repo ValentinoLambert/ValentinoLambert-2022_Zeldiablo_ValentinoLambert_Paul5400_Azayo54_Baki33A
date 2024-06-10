@@ -4,12 +4,8 @@ package gameLaby.laby;
 /**
  * gere un personnage situe en x,y
  */
-public class Perso {
+public class Perso  extends Personnage{
 
-    /**
-     * position du personnage
-     */
-    int x, y;
 
     /**
      * constructeur
@@ -17,16 +13,15 @@ public class Perso {
      * @param dx position selon x
      * @param dy position selon y
      */
-    public Perso(int dx, int dy) {
-        this.x = dx;
-        this.y = dy;
+    public Perso(int dx, int dy,int vie) {
+        super(dx,dy,vie);
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public boolean etreEnFace(Personnage p){
+        int[] tempC=Labyrinthe.getSuivant(this.x,this.y,this.orientation);
+        return(p.etrePresent(tempC[0],tempC[1]));
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
+
+
 }
