@@ -1,4 +1,4 @@
-package Graphe;
+package graphe;
 
 /**
  * La classe Arc
