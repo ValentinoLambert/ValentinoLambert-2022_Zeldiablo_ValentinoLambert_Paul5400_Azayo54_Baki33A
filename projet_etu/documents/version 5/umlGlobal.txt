@@ -119,7 +119,7 @@ class graphe.Noeud {
 + void ajouterArc(String,double)
 + String adjString()
 }
-interface graphe.Graphe {
+interface graphe.graphe {
 ~ List<String> listeNoeuds()
 ~ List<Arc> suivants(String)
 }
@@ -153,12 +153,12 @@ class graphe.GrapheLabyrinthe {
 + Labyrinthe getLaby()
 }
 class graphe.BellmanFord {
-+ Valeur resoudre(Graphe,String)
++ Valeur resoudre(graphe,String)
 }
 Noeud-> "1*" Arc : adj
 
 
-Graphe <|.. GrapheLabyrinthe
+graphe <|.. GrapheLabyrinthe
 class Perso {
 + boolean etreEnFace(Personnage)
 }

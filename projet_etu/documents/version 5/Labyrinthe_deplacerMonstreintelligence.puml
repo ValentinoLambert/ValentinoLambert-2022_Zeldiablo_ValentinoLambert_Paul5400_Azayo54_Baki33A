@@ -247,10 +247,10 @@ Personnage --> Labyrinthe
 deactivate Personnage
 Labyrinthe -> BellmanFord : resoudre
 activate BellmanFord
-BellmanFord -> Graphe : listeNoeuds
-activate Graphe
-Graphe --> BellmanFord
-deactivate Graphe
+BellmanFord -> graphe : listeNoeuds
+activate graphe
+graphe --> BellmanFord
+deactivate graphe
 create Valeur
 BellmanFord -> Valeur : new
 activate Valeur
@@ -268,10 +268,10 @@ BellmanFord -> Valeur : setParent
 activate Valeur
 Valeur --> BellmanFord
 deactivate Valeur
-BellmanFord -> Graphe : suivants
-activate Graphe
-Graphe --> BellmanFord
-deactivate Graphe
+BellmanFord -> graphe : suivants
+activate graphe
+graphe --> BellmanFord
+deactivate graphe
 BellmanFord -> Arc : getDest
 activate Arc
 Arc --> BellmanFord
