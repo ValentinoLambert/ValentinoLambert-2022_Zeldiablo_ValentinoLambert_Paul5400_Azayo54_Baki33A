@@ -1,0 +1,30 @@
+@startuml
+
+skin rose
+
+title Monstre
+
+
+
+
+
+
+
+class Personnage{
+  int x
+  int y 
+  + Personnage(int dx, int dy)
+  + boolean etrePresent(int dx, int dy)
+  + int getX()
+  + int getY()
+}
+
+class Perso{
+   Perso(int dx, int dy)
+}
+class Monstre{
+  Monstre(int dx, int dy)
+}
+
+Monstre -|>Personnage
+Perso -|>Personnage

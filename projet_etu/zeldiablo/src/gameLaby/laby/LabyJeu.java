@@ -1,4 +1,5 @@
 package gameLaby.laby;
+
 import moteurJeu.Clavier;
 import moteurJeu.Jeu;
 
@@ -33,7 +34,7 @@ public class LabyJeu implements Jeu {
         if(clavier.space){
             laby.persoAttaquerMonstre();
         }
-
+        
         if (clavier.droite) {
             laby.deplacerPerso(laby.DROITE, laby.pj);
 

@@ -1,0 +1,520 @@
+@startuml
+participant Actor
+Actor -> Labyrinthe : deplacerMonstreintelligence
+activate Labyrinthe
+Labyrinthe -> Monstre : getIntelligence
+activate Monstre
+Monstre --> Labyrinthe
+deactivate Monstre
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerIntelligenceMoyenne
+activate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : deplacerIntellifenceUltime
+activate Labyrinthe
+create GrapheLabyrinthe
+Labyrinthe -> GrapheLabyrinthe : new
+activate GrapheLabyrinthe
+GrapheLabyrinthe --> Labyrinthe
+deactivate GrapheLabyrinthe
+Labyrinthe -> Personnage : getX
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Personnage : getY
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> BellmanFord : resoudre
+activate BellmanFord
+BellmanFord -> Graphe : listeNoeuds
+activate Graphe
+Graphe --> BellmanFord
+deactivate Graphe
+create Valeur
+BellmanFord -> Valeur : new
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : setValeur
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : setValeur
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : setParent
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Graphe : suivants
+activate Graphe
+Graphe --> BellmanFord
+deactivate Graphe
+BellmanFord -> Arc : getDest
+activate Arc
+Arc --> BellmanFord
+deactivate Arc
+BellmanFord -> Arc : getCout
+activate Arc
+Arc --> BellmanFord
+deactivate Arc
+BellmanFord -> Valeur : getValeur
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : getValeur
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : setValeur
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord -> Valeur : setParent
+activate Valeur
+Valeur --> BellmanFord
+deactivate Valeur
+BellmanFord --> Labyrinthe
+deactivate BellmanFord
+Labyrinthe -> Personnage : getX
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Personnage : getY
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Valeur : calculerChemin
+activate Valeur
+Valeur -> Valeur : getParent
+activate Valeur
+Valeur --> Valeur
+deactivate Valeur
+Valeur -> Valeur : getParent
+activate Valeur
+Valeur --> Valeur
+deactivate Valeur
+Valeur --> Labyrinthe
+deactivate Valeur
+Labyrinthe -> GrapheLabyrinthe : extraireCoordonnees
+activate GrapheLabyrinthe
+GrapheLabyrinthe --> Labyrinthe
+deactivate GrapheLabyrinthe
+Labyrinthe -> Personnage : getX
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : getX
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : getY
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : getY
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : deplacerPerso
+activate Labyrinthe
+Labyrinthe -> Personnage : setAttaque
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Labyrinthe : getSuivant
+activate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Labyrinthe : monstrePresent
+activate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe -> Personnage : etrePresent
+activate Personnage
+Personnage --> Labyrinthe
+deactivate Personnage
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etrePresent
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> Porte : etreFerme
+activate Porte
+Porte --> Labyrinthe
+deactivate Porte
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe -> CaseDeclencheur : event
+activate CaseDeclencheur
+CaseDeclencheur --> Labyrinthe
+deactivate CaseDeclencheur
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+Labyrinthe --> Labyrinthe
+deactivate Labyrinthe
+return
+@enduml
