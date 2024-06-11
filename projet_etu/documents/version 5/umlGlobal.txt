@@ -1,0 +1,386 @@
+@startuml
+title fonctionnement du jeu
+
+class Perso {
++ boolean etreEnFace(Personnage)
+}
+CaseFermeture-> "1" Porte: p
+class CaseFermeture {
+
+~ void event(Personnage)
+}
+abstract class CaseDeclencheur {
+- int x
+~ {abstract}void event(Personnage)
++ int getY()
++ int getX()
+}
+class Fantome {
+}
+
+class Clavier {
++ boolean haut
++ void appuyerTouche(KeyEvent)
++ void relacherTouche(KeyEvent)
+}
+
+MoteurJeu-> "1" Clavier : control
+MoteurJeu-> "1" Jeu : jeu
+MoteurJeu-> "1" DessinJeu : dessin
+MoteurJeu-> "1" FrameStats : frameStats
+
+class MoteurJeu {
+- {static} double FPS
+- {static} double dureeFPS
+- {static} double WIDTH
+- {static} double HEIGHT
+
++ {static} void launch(Jeu,DessinJeu)
++ {static} void setFPS(int)
++ {static} void setTaille(double,double)
++ void start(Stage)
+- void startAnimation(Canvas)
+}
+interface Jeu {
+~ void update(double,Clavier)
+~ void init()
+~ boolean etreFini()
+}
+interface DessinJeu {
+~ void dessinerJeu(Jeu,Canvas)
+}
+
+class Personnage {
+~ int x
+~ boolean attaque
+~ int maxVie
++ String orientation
++ boolean getAttaque()
++ void setAttaque(boolean)
++ boolean etrePresent(int,int)
++ int getX()
++ int getY()
++ void ajouterVie(int)
++ int getVie()
++ int getMaxVie()
++ void attaquer(Personnage)
++ boolean estACoter(Personnage)
++ boolean etreMort()
+}
+
+interface Intelligence {
+~ String NULLE
+~ String FAIBLE
+~ String MOYENNE
+~ String INTELLIGENT
+~ String[] intelligence
+}
+CaseOuverture -d-> "1" Porte : p
+
+class CaseOuverture {
+
+~ void event(Personnage)
+}
+
+LabyJeu -d-> "1" Labyrinthe : laby
+
+class LabyJeu {
+
++ Labyrinthe getLaby()
++ void update(double,Clavier)
++ void init()
++ boolean etreFini()
+}
+
+
+class Porte {
+~ int x
+- boolean ferme
+~ boolean etrePresent(int,int)
++ boolean etreFerme()
++ void setFerme(boolean)
++ boolean estTraversable(int,int)
+}
+
+Labyrinthe -d-> "1" Perso : pj
+
+Labyrinthe -d-> "1" Porte : p
+
+Labyrinthe -d-> "1*" Monstre :monstre
+Labyrinthe -d-> "1*" CaseDeclencheur :caseD
+@startuml
+title fonctionnement du jeu
+class graphe.Noeud {
+- String nom
+
++ String getNom()
++ List<Arc> getAdj()
++ boolean equals(Object)
++ void ajouterArc(String,double)
++ String adjString()
+}
+interface graphe.graphe {
+~ List<String> listeNoeuds()
+~ List<Arc> suivants(String)
+}
+
+
+class graphe.Valeur {
+~ Map<String,Double> valeur
+~ Map<String,String> parent
++ void setValeur(String,double)
++ void setParent(String,String)
++ String getParent(String)
++ double getValeur(String)
++ String toString()
++ List<String> calculerChemin(String)
+}
+class graphe.Arc {
+- String dest
+- double cout
++ String getDest()
++ double getCout()
++ String toString()
++ String toGraphviz()
+}
+class graphe.GrapheLabyrinthe {
+- Labyrinthe laby
++ List<String> listeNoeuds()
++ List<Arc> suivants(String)
++ int[] suivantValide(String,int,int)
++ {static} int[] extraireCoordonnees(String)
++ boolean coorValide(int,int)
++ Labyrinthe getLaby()
+}
+class graphe.BellmanFord {
++ Valeur resoudre(graphe,String)
+}
+Noeud-> "1*" Arc : adj
+
+
+graphe <|.. GrapheLabyrinthe
+class Perso {
++ boolean etreEnFace(Personnage)
+}
+CaseFermeture-> "1" Porte: p
+class CaseFermeture {
+
+~ void event(Personnage)
+}
+abstract class CaseDeclencheur {
+- int x
+~ {abstract}void event(Personnage)
++ int getY()
++ int getX()
+}
+class Fantome {
+}
+
+class Clavier {
++ boolean haut
++ void appuyerTouche(KeyEvent)
++ void relacherTouche(KeyEvent)
+}
+
+MoteurJeu-> "1" Clavier : control
+MoteurJeu-> "1" Jeu : jeu
+MoteurJeu-> "1" DessinJeu : dessin
+MoteurJeu-> "1" FrameStats : frameStats
+
+class MoteurJeu {
+- {static} double FPS
+- {static} double dureeFPS
+- {static} double WIDTH
+- {static} double HEIGHT
+
++ {static} void launch(Jeu,DessinJeu)
++ {static} void setFPS(int)
++ {static} void setTaille(double,double)
++ void start(Stage)
+- void startAnimation(Canvas)
+}
+interface Jeu {
+~ void update(double,Clavier)
+~ void init()
+~ boolean etreFini()
+}
+interface DessinJeu {
+~ void dessinerJeu(Jeu,Canvas)
+}
+
+class Personnage {
+~ int x
+~ boolean attaque
+~ int maxVie
++ String orientation
++ boolean getAttaque()
++ void setAttaque(boolean)
++ boolean etrePresent(int,int)
++ int getX()
++ int getY()
++ void ajouterVie(int)
++ int getVie()
++ int getMaxVie()
++ void attaquer(Personnage)
++ boolean estACoter(Personnage)
++ boolean etreMort()
+}
+
+interface Intelligence {
+~ String NULLE
+~ String FAIBLE
+~ String MOYENNE
+~ String INTELLIGENT
+~ String[] intelligence
+}
+CaseOuverture -d-> "1" Porte : p
+
+class CaseOuverture {
+
+~ void event(Personnage)
+}
+
+LabyJeu -d-> "1" Labyrinthe : laby
+
+class LabyJeu {
+
++ Labyrinthe getLaby()
++ void update(double,Clavier)
++ void init()
++ boolean etreFini()
+}
+
+
+class Porte {
+~ int x
+- boolean ferme
+~ boolean etrePresent(int,int)
++ boolean etreFerme()
++ void setFerme(boolean)
++ boolean estTraversable(int,int)
+}
+
+Labyrinthe -d-> "1" Perso : pj
+
+Labyrinthe -d-> "1" Porte : p
+
+Labyrinthe -d-> "1*" Monstre :monstre
+Labyrinthe -d-> "1*" CaseDeclencheur :caseD
+
+class Labyrinthe {
++ {static} char MUR
++ {static} char PJ
++ {static} char VIDE
++ {static} String HAUT
++ {static} String BAS
++ {static} String GAUCHE
++ {static} String DROITE
++ {static} char MONSTRE
++ boolean[][] murs
+~ {static} int[] getSuivant(int,int,String)
++ void ajouterCaseDeclencheur(CaseDeclencheur)
++ int[] genererCoorValid()
++ boolean monstrePresent(int,int)
++ boolean cooorValideMonstre(int,int)
++ Monstre monstreEnXY(int,int)
++ void deplacerPerso(String,Personnage)
++ boolean etreFini()
++ void retirerMonstreMort()
++ int getLengthY()
++ int getLength()
++ boolean getMur(int,int)
++ ArrayList<Monstre> getMonstre()
++ Porte getPorte()
++ void persoAttaquerMonstre()
++ void deplacerIntelligenceMoyenne(Monstre)
++ void deplacerIntellifenceUltime(Monstre)
++ void deplacerMonstreintelligence(Monstre)
+}
+class LabyDessin {
++ void dessinerJeu(Jeu,Canvas)
+}
+class Troll {
++ void regenerer()
+}
+class CasePiege {
+~ boolean ammorce
+~ boolean passerDessus
++ void event(Personnage)
++ boolean getPasserDessus()
+}
+class Monstre {
+- String intelligence
++ String getIntelligence()
++ void setIntelligence(String)
+}
+Personnage <|-- Perso
+CaseDeclencheur <|-- CaseFermeture
+CaseDeclencheur <|-- CaseOuverture
+Jeu <|.. LabyJeu
+Monstre <|-- Fantome
+
+Monstre <|-- Troll
+DessinJeu <|.. LabyDessin
+CaseDeclencheur <|-- CasePiege
+Intelligence <|.. Monstre
+Personnage <|-- Monstre
+@enduml
+class Labyrinthe {
++ {static} char MUR
++ {static} char PJ
++ {static} char VIDE
++ {static} String HAUT
++ {static} String BAS
++ {static} String GAUCHE
++ {static} String DROITE
++ {static} char MONSTRE
++ boolean[][] murs
+~ {static} int[] getSuivant(int,int,String)
++ void ajouterCaseDeclencheur(CaseDeclencheur)
++ int[] genererCoorValid()
++ boolean monstrePresent(int,int)
++ boolean cooorValideMonstre(int,int)
++ Monstre monstreEnXY(int,int)
++ void deplacerPerso(String,Personnage)
++ boolean etreFini()
++ void retirerMonstreMort()
++ int getLengthY()
++ int getLength()
++ boolean getMur(int,int)
++ ArrayList<Monstre> getMonstre()
++ Porte getPorte()
++ void persoAttaquerMonstre()
++ void deplacerIntelligenceMoyenne(Monstre)
++ void deplacerIntellifenceUltime(Monstre)
++ void deplacerMonstreintelligence(Monstre)
+}
+class LabyDessin {
++ void dessinerJeu(Jeu,Canvas)
+}
+class Troll {
++ void regenerer()
+}
+class CasePiege {
+~ boolean ammorce
+~ boolean passerDessus
++ void event(Personnage)
++ boolean getPasserDessus()
+}
+class Monstre {
+- String intelligence
++ String getIntelligence()
++ void setIntelligence(String)
+}
+Personnage <|-- Perso
+CaseDeclencheur <|-- CaseFermeture
+CaseDeclencheur <|-- CaseOuverture
+Jeu <|.. LabyJeu
+Monstre <|-- Fantome
+
+Monstre <|-- Troll
+DessinJeu <|.. LabyDessin
+CaseDeclencheur <|-- CasePiege
+Intelligence <|.. Monstre
+Personnage <|-- Monstre
+
+@enduml

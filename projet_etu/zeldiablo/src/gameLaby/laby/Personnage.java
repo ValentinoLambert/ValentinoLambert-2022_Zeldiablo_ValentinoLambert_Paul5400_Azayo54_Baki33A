@@ -18,6 +18,11 @@ public class Personnage {
      * @param dy position selon y
      */
     public Personnage(int dx, int dy,int vie) {
+        if(this instanceof Troll){
+            if(vie==0){
+                vie=3;
+            }
+        }
         this.x = dx;
         this.y = dy;
         this.vie=vie;

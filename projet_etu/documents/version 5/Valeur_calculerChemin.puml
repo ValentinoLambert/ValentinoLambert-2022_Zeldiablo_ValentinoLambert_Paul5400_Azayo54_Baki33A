@@ -1,0 +1,14 @@
+@startuml
+participant Actor
+Actor -> Valeur : calculerChemin
+activate Valeur
+Valeur -> Valeur : getParent
+activate Valeur
+Valeur --> Valeur
+deactivate Valeur
+Valeur -> Valeur : getParent
+activate Valeur
+Valeur --> Valeur
+deactivate Valeur
+return
+@enduml

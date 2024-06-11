@@ -7,7 +7,7 @@ public class Clavier {
     /**
      * controle appuyes
      */
-    public boolean haut, bas, gauche, droite;
+    public boolean haut, bas, gauche, droite,space;
 
     /**
      * stocke les commandes
@@ -17,6 +17,11 @@ public class Clavier {
     public void appuyerTouche(KeyEvent event) {
 
         switch (event.getCode()) {
+
+            //si touche espace
+            case SPACE:
+                space=true;
+                break;
 
             // si touche bas
             case S:
@@ -50,6 +55,11 @@ public class Clavier {
     public void relacherTouche(KeyEvent event) {
 
         switch (event.getCode()) {
+
+            //si touche espace
+            case SPACE:
+                space=true;
+                break;
 
             // si touche bas
             case S:
