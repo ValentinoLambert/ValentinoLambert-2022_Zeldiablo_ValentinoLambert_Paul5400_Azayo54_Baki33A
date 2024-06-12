@@ -20,7 +20,7 @@ public class MainLaby {
         if (nomFichier == null) {
             lj.laby = new Labyrinthe();
         } else{
-            lj.laby = new Labyrinthe("labySimple/" + nomFichier);
+            lj.laby = new Labyrinthe("projet_etu/zeldiablo/labySimple/" + nomFichier);
     }
         LabyDessin ld=new LabyDessin();
 

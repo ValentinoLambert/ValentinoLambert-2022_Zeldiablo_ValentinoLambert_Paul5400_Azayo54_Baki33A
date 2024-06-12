@@ -10,18 +10,18 @@ import moteurJeu.Jeu;
 public class LabyDessin implements DessinJeu {
 
 
-    private String tiry="/thierry_henry.jpg";
-    private String sol=   "/sol.png";
-    private String hero="/heroNoDamage.png";
-    private String monstre="/monstre.png";
+    private String tiry="projet_etu/zeldiablo/spiriteTexture/thierry_henry.jpg";
+    private String sol=   "projet_etu/zeldiablo/spiriteTexture/sol.png";
+    private String hero="projet_etu/zeldiablo/spiriteTexture/heroNoDamage.png";
+    private String monstre="projet_etu/zeldiablo/spiriteTexture/monstre.png";
 
-    private String mur ="/mur.png";
+    private String mur ="projet_etu/zeldiablo/spiriteTexture/mur.png";
 
-    private String trollFrape="/monstreFrappe.png";
-    private String trollFrappePas="/monstrefrappepas.png";
-    private String fantome="/phantome.png";
-    private String piege="/pik.png";
-    private String porte="/porte.png";
+    private String trollFrape="projet_etu/zeldiablo/spiriteTexture/monstreFrappe.png";
+    private String trollFrappePas="projet_etu/zeldiablo/spiriteTexture/monstrefrappepas.png";
+    private String fantome="projet_etu/zeldiablo/spiriteTexture/phantome.png";
+    private String piege="projet_etu/zeldiablo/spiriteTexture/pik.png";
+    private String porte="projet_etu/zeldiablo/spiriteTexture/porte.png";
     @Override
     public void dessinerJeu(Jeu jeu, Canvas canvas) {
         Labyrinthe laby = ((LabyJeu) jeu).getLaby();
